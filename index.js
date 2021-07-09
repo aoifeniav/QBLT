@@ -24,19 +24,19 @@ function addToSelection(dieClass) {
     // Change dice color on click/tap:
     selectedDie.addEventListener('click', function () {
         const colorClasses = selectedDie.getAttribute('class');
-        if (!colorClasses.includes('b-roller--color')) {
-            selectedDie.classList.add('b-roller--color-1');
-        } else if (colorClasses.includes('b-roller--color-1')) {
-            selectedDie.classList.remove('b-roller--color-1');
-            selectedDie.classList.add('b-roller--color-2');
-        } else if (colorClasses.includes('b-roller--color-2')) {
-            selectedDie.classList.remove('b-roller--color-2');
-            selectedDie.classList.add('b-roller--color-3');
-        } else if (colorClasses.includes('b-roller--color-3')) {
-            selectedDie.classList.remove('b-roller--color-3');
-            selectedDie.classList.add('b-roller--color-4');
+        if (!colorClasses.includes('b-dice--color')) {
+            selectedDie.classList.add('b-dice--color-1');
+        } else if (colorClasses.includes('b-dice--color-1')) {
+            selectedDie.classList.remove('b-dice--color-1');
+            selectedDie.classList.add('b-dice--color-2');
+        } else if (colorClasses.includes('b-dice--color-2')) {
+            selectedDie.classList.remove('b-dice--color-2');
+            selectedDie.classList.add('b-dice--color-3');
+        } else if (colorClasses.includes('b-dice--color-3')) {
+            selectedDie.classList.remove('b-dice--color-3');
+            selectedDie.classList.add('b-dice--color-4');
         } else {
-            selectedDie.classList.remove('b-roller--color-4');
+            selectedDie.classList.remove('b-dice--color-4');
         }
     })
 }

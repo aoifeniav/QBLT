@@ -37,7 +37,7 @@
   --grey-dark: #404040;
   --grey-light: #aaaaaa;
   --color-white: #ffffff;
-  --shadow: 0px 3px 8px #404040;
+  --shadow: 0px 2px 5px #404040;
 }
 
 header {
@@ -77,7 +77,7 @@ header {
   padding-top: 15px;
 }
 
-.b-roller__d4:before {
+.b-dice__d4:before {
   content: "\e905";
   font-family: "icomoon";
   font-weight: normal;
@@ -85,7 +85,7 @@ header {
   line-height: 1em;
 }
 
-.b-roller__d6:before {
+.b-dice__d6:before {
   content: "\e904";
   font-family: "icomoon";
   font-weight: normal;
@@ -93,7 +93,7 @@ header {
   line-height: 1em;
 }
 
-.b-roller__d8:before {
+.b-dice__d8:before {
   content: "\e903";
   font-family: "icomoon";
   font-weight: normal;
@@ -101,7 +101,7 @@ header {
   line-height: 1em;
 }
 
-.b-roller__d10:before {
+.b-dice__d10:before {
   content: "\e902";
   font-family: "icomoon";
   font-weight: normal;
@@ -109,7 +109,7 @@ header {
   line-height: 1em;
 }
 
-.b-roller__d12:before {
+.b-dice__d12:before {
   content: "\e901";
   font-family: "icomoon";
   font-weight: normal;
@@ -117,7 +117,7 @@ header {
   line-height: 1em;
 }
 
-.b-roller__d20:before {
+.b-dice__d20:before {
   content: "\e900";
   font-family: "icomoon";
   font-weight: normal;
@@ -125,19 +125,19 @@ header {
   line-height: 1em;
 }
 
-.b-roller--color-1 {
+.b-dice--color-1 {
   color: var(--dice-color-1);
 }
 
-.b-roller--color-2 {
+.b-dice--color-2 {
   color: var(--dice-color-2);
 }
 
-.b-roller--color-3 {
+.b-dice--color-3 {
   color: var(--dice-color-3);
 }
 
-.b-roller--color-4 {
+.b-dice--color-4 {
   color: var(--dice-color-4);
 }
 

@@ -18,7 +18,9 @@
         background-color: var(--color-white);
         padding-top: 15px;
     }
+}
 
+.b-dice {
     &__d4 {
         &:before {
             content: "\e905";
