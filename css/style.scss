@@ -7,7 +7,6 @@
 }
 
 @mixin dice-icons {
-    color: var(--color-dark);
     font-family: "icomoon";
     font-weight: normal;
     font-size: 80px;
@@ -19,10 +18,7 @@
 @import "header";
 @import "main";
 @import "footer";
-
-html {
-    scroll-behavior: smooth;
-}
+@import "mediaqueries";
 
 body {
     margin: 0;

@@ -1,12 +1,9 @@
-.color-theme {
+.b-color-theme {
     text-align: center;
+    color: var(--grey-light);
 
-    &__on {
+    &--on {
         color: var(--color-dark);
-    }
-
-    &__off {
-        color: var(--grey-light);
     }
 }
 
@@ -15,6 +12,7 @@
 
     &__selection {
         min-height: 100px;
+        max-width: 750px;
         border: 2px solid var(--grey-light);
         border-radius: 8px;
         background-color: var(--color-white);
@@ -26,7 +24,6 @@
             content: "\e905";
             @include dice-icons;
         }
-
     }
     &__d6 {
         &:before {
@@ -59,6 +56,21 @@
         }
     }
 
+    &--color-1 {
+        color: var(--dice-color-1);
+    }
+
+    &--color-2 {
+        color: var(--dice-color-2);
+    }
+
+    &--color-3 {
+        color: var(--dice-color-3);
+    }
+
+    &--color-4 {
+        color: var(--dice-color-4);
+    }
 }
 
 .b-instructions {

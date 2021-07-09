@@ -13,19 +13,13 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <h1 class="qblt-title py-2">QBLT</h1>
+        <h1 class="qblt-title mt-2">QBLT</h1>
     </header>
     <main>
-        <div class="container">
-            <div class="color-theme mt-3">
-                <span class="color-theme__true color-theme__on mx-4" role="button">true</span>
-                <span class="color-theme__deut color-theme__off mx-4" role="button">deut.</span>
-                <span class="color-theme__prot color-theme__off mx-4" role="button">prot.</span>
-                <span class="color-theme__trit color-theme__off mx-4" role="button">trit.</span>
-            </div>
-            <div class="row b-roller m-5">
+        <div class="container d-flex flex-column align-items-center">
+            <div class="b-roller m-5">
                 <div
-                    class="col-12 offset-lg-2 col-lg-8 b-roller__selector d-flex justify-content-center align flex-wrap">
+                    class="b-roller__selector d-flex justify-content-center flex-wrap">
                     <span class="b-roller__d4" role="button"></span>
                     <span class="b-roller__d6" role="button"></span>
                     <span class="b-roller__d8" role="button"></span>
@@ -33,21 +27,21 @@
                     <span class="b-roller__d12" role="button"></span>
                     <span class="b-roller__d20" role="button"></span>
                 </div>
-                <div class="col-12 offset-lg-2 col-lg-8 b-roller__selection d-flex justify-content-center flex-wrap">
+                <div class="b-roller__selection d-flex justify-content-center flex-wrap">
                 </div>
                 <div class="b-instructions mt-2">
                     <span class="mx-4">left&nbsp;click/tap: change&nbsp;color</span>
-                    <span class="mx-4">right&nbsp;click/swipe&nbsp;up: remove&nbsp;die</span>
+                    <span class="mx-4">right&nbsp;click/clear: remove&nbsp;dice</span>
                 </div>
-                <div class="my-5 b-roller__buttons">
-                    <button class="b-btn">Roll</button>
-                    <button class="b-btn">Clear</button>
+                <div class="b-roller__buttons my-5">
+                    <button class="b-btn b-btn__roll">Roll</button>
+                    <button class="b-btn b-btn__clear">Clear</button>
                 </div>
             </div>
         </div>
     </main>
     <footer class="mt-auto">
-        <p class="b-about">QBLT: color blind friendly dice roller</p>
+        <p class="b-about">QBLT dice roller</p>
     </footer>
 </body>
 
