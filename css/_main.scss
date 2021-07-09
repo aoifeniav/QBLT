@@ -1,0 +1,76 @@
+.color-theme {
+    text-align: center;
+
+    &__on {
+        color: var(--color-dark);
+    }
+
+    &__off {
+        color: var(--grey-light);
+    }
+}
+
+.b-roller {
+    text-align: center;
+
+    &__selection {
+        min-height: 100px;
+        border: 2px solid var(--grey-light);
+        border-radius: 8px;
+        background-color: var(--color-white);
+        padding-top: 15px;
+    }
+
+    &__d4 {
+        &:before {
+            content: "\e905";
+            @include dice-icons;
+        }
+
+    }
+    &__d6 {
+        &:before {
+            content: "\e904";
+            @include dice-icons;
+        }
+    }
+    &__d8 {
+        &:before {
+            content: "\e903";
+            @include dice-icons;
+        }
+    }
+    &__d10 {
+        &:before {
+            content: "\e902";
+            @include dice-icons;
+        }
+    }
+    &__d12 {
+        &:before {
+            content: "\e901";
+            @include dice-icons;
+        }
+    }
+    &__d20 {
+        &:before {
+            content: "\e900";
+            @include dice-icons;
+        }
+    }
+
+}
+
+.b-instructions {
+    color: var(--grey-light);
+}
+
+.b-btn {
+    background-color: var(--color-dark);
+    border: none;
+    box-shadow: var(--shadow);
+    margin: 0 12px;
+    padding: 8px 12px;
+    font-size: 16px;
+    @include font-big;
+}

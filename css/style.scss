@@ -1,0 +1,38 @@
+@mixin font-big {
+    color: var(--color-light);
+    font-family: "Kanit";
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+@mixin dice-icons {
+    color: var(--color-dark);
+    font-family: "icomoon";
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 1em;
+}
+
+@import "fonts";
+@import "variables";
+@import "header";
+@import "main";
+@import "footer";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-light);
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 11px;
+    color: var(--color-dark);
+}
+
+a {
+    text-decoration: none;
+}

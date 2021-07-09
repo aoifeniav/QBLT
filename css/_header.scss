@@ -1,0 +1,9 @@
+header {
+    background-color: var(--color-dark);
+    box-shadow: var(--shadow);
+}
+
+.qblt-title {
+    @include font-big;
+    font-size: 26px;
+}
