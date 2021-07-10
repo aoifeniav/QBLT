@@ -233,6 +233,9 @@ footer {
   .qblt-title {
     font-size: 24px;
   }
+  .b-roller {
+    margin-top: 50px;
+  }
   .b-roller__selector {
     margin: 30px 0;
     max-width: none;
