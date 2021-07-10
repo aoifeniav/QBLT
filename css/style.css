@@ -215,6 +215,8 @@ header {
 
 .b-your-roll {
   text-align: center;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .b-your-roll__total {

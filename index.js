@@ -1,3 +1,77 @@
+function getRandomNumber(min, max) {
+    return Math.floor(
+        Math.random() * (max - min + 1) + min
+    )
+}
+
+function sumNumberList(numberList) {
+    let sumTotal = 0;
+    for (let i = 0; i < numberList.length; i++) {
+        sumTotal += numberList[i];
+    }
+    return sumTotal;
+}
+
+function rollDice() {
+    if (document.querySelector('.b-your-roll')) {
+        document.querySelector('.b-your-roll').remove();
+    }
+
+    const selectedDice = document.querySelectorAll('.b-roller__selection>span');
+    if (selectedDice.length <= 0) {
+        // Aquí hay que poner que haga algo si no hay dados en la selección.
+    } else {
+        const main_section = document.querySelector('main');
+        const b_your_roll = document.createElement('div');
+        b_your_roll.classList.add('b-your-roll');
+        main_section.appendChild(b_your_roll);
+
+        const rolledDiceRow = document.createElement('div');
+        rolledDiceRow.classList.add('d-flex', 'justify-content-center', 'flex-wrap');
+        b_your_roll.appendChild(rolledDiceRow);
+
+        const rolledNumbers = [];
+        selectedDice.forEach(function (rolledDieInList) {
+            const rolledDieContainer = document.createElement('div');
+            rolledDieContainer.classList.add('d-flex', 'flex-column', 'align-items-center');
+            rolledDiceRow.appendChild(rolledDieContainer);
+            const rolledDieInListClasses = rolledDieInList.getAttribute('class');
+            let dieValor;
+            if (rolledDieInListClasses.includes('d4')) {
+                dieValor = getRandomNumber(1, 4);
+                rolledNumbers.push(dieValor);
+            } else if (rolledDieInListClasses.includes('d6')) {
+                dieValor = getRandomNumber(1, 6);
+                rolledNumbers.push(dieValor);
+            } else if (rolledDieInListClasses.includes('d8')) {
+                dieValor = getRandomNumber(1, 8);
+                rolledNumbers.push(dieValor);
+            } else if (rolledDieInListClasses.includes('d10')) {
+                dieValor = getRandomNumber(1, 10);
+                rolledNumbers.push(dieValor);
+            } else if (rolledDieInListClasses.includes('d12')) {
+                dieValor = getRandomNumber(1, 12);
+                rolledNumbers.push(dieValor);
+            } else if (rolledDieInListClasses.includes('d20')) {
+                dieValor = getRandomNumber(1, 20);
+                rolledNumbers.push(dieValor);
+            }
+            const rolledDieIcon = document.createElement('span');
+            rolledDieIcon.setAttribute('class', rolledDieInList.classList);
+            rolledDieIcon.classList.add('b-dice--small');
+            rolledDieContainer.appendChild(rolledDieIcon);
+            const rolledDieValor = document.createElement('span');
+            rolledDieValor.classList.add('b-your-roll__result');
+            rolledDieValor.innerHTML = dieValor;
+            rolledDieContainer.appendChild(rolledDieValor);
+        });
+        const rolledTotalSum = document.createElement('div');
+        rolledTotalSum.classList.add('b-your-roll__total');
+        b_your_roll.appendChild(rolledTotalSum);
+        rolledTotalSum.innerText = 'Total: ' + sumNumberList(rolledNumbers);
+    }
+}
+
 function removeDieFromSelection(dieToRemove) {
     dieToRemove.remove();
 }
@@ -20,48 +94,41 @@ function toggleColor(dieToToggle) {
     }
 }
 
-/** This function adds clicked die to selection and applies its class to the new die so they both have the same styles.
-*/
-function addToSelection(dieClass) {
+function addDieToSelection(dieClass) {
     const selectedDie = document.createElement('span');
     const b_roller__selection = document.querySelector('.b-roller__selection');
     b_roller__selection.appendChild(selectedDie);
+    // I apply clicked die's class to the new die so they both have the same styles.
     selectedDie.classList.add(dieClass);
 
-    // Event listeners applied to newly created dice must be inside this function because they don't exist yet in index.html.
-    // Remove selected die:
+    // Event listeners applied to new dice must be inside this function because new dice don't exist yet in index.html.
     selectedDie.addEventListener('contextmenu', function (event) {
         event.preventDefault();
         removeDieFromSelection(selectedDie);
     });
-    // Change dice color on click/tap on selected die:
     selectedDie.addEventListener('click', function () {
         toggleColor(selectedDie);
     });
 }
 
-/**  This function clears all selected dice.
-*/
-function clearSelection() {
+function clearDiceSelection() {
     const b_roller__selection = document.querySelector('.b-roller__selection');
     b_roller__selection.innerHTML = '';
 }
 
-/**  This function adds the posibility to use addToSelection function to every die thanks to forEach.
+/**  
+ * Adds the posibility to use addDieToSelection function to every die thanks to forEach.
  */
 function selectorDieListener() {
-    // This querySelector gets a list of all dice (span) inside selection.
     const selectorDice = document.querySelectorAll('.b-roller__selector>span');
     selectorDice.forEach(function (dieInList) {
         dieInList.addEventListener('click', function () {
-            // This getAttribute gets each die's class (__d4, __d6, etc.) so they can be applied to newly created dice in addToSelection function.
-            addToSelection(dieInList.getAttribute('class'));
+            // This getAttribute gets each die's class (__d4, __d6, etc.) so they can be applied to newly created dice in addDieToSelection function.
+            addDieToSelection(dieInList.getAttribute('class'));
         });
     })
 }
 
-/**  This function uses rollDice function when clicking Roll button.
-*/
 function rollButtonListener() {
     const rollButton = document.querySelector('.b-btn__roll');
     rollButton.addEventListener('click', function () {
@@ -69,12 +136,10 @@ function rollButtonListener() {
     });
 }
 
-/** This function uses clearSelection function when clicking Clear button.
- */
 function clearButtonListener() {
     const clearButton = document.querySelector('.b-btn__clear');
     clearButton.addEventListener('click', function () {
-        clearSelection();
+        clearDiceSelection();
     });
 }
 
@@ -86,6 +151,7 @@ function eventListeners() {
 
 function init() {
     eventListeners();
+    getRandomNumber();
 }
 
 window.onload = function () {
