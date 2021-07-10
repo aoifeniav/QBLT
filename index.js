@@ -62,7 +62,7 @@ function rollDice() {
             }
             const rolledDieIcon = document.createElement('span');
             rolledDieIcon.setAttribute('class', rolledDieInList.classList);
-            rolledDieIcon.classList.add('b-dice--small');
+            rolledDieIcon.classList.add('b-dice--small', 'b-dice--rotate');
             rolledDieContainer.appendChild(rolledDieIcon);
             const rolledDieValor = document.createElement('span');
             rolledDieValor.classList.add('b-your-roll__result');

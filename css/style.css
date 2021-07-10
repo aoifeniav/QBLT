@@ -50,24 +50,6 @@ body {
   color: var(--color-dark);
 }
 
-@-webkit-keyframes highlight {
-  50% {
-    background-color: var(--flash);
-  }
-  100% {
-    background-color: var(--color-white);
-  }
-}
-
-@keyframes highlight {
-  50% {
-    background-color: var(--flash);
-  }
-  100% {
-    background-color: var(--color-white);
-  }
-}
-
 header {
   background-color: var(--color-dark);
   -webkit-box-shadow: var(--shadow);
@@ -191,6 +173,11 @@ header {
   font-size: 60px;
 }
 
+.b-dice--rotate {
+  -webkit-animation: rotate-center 0.25s linear 3;
+          animation: rotate-center 0.25s linear 3;
+}
+
 .b-dice--color-1 {
   color: var(--dice-color-1);
 }
@@ -253,6 +240,46 @@ footer {
 
 .b-about {
   color: var(--grey-light);
+}
+
+@-webkit-keyframes highlight {
+  50% {
+    background-color: var(--flash);
+  }
+  100% {
+    background-color: var(--color-white);
+  }
+}
+
+@keyframes highlight {
+  50% {
+    background-color: var(--flash);
+  }
+  100% {
+    background-color: var(--color-white);
+  }
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 @media screen and (min-width: 576px) {

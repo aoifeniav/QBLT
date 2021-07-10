@@ -1,0 +1,17 @@
+@keyframes highlight {
+    50% {
+        background-color: var(--flash);
+    }
+    100% {
+        background-color: var(--color-white);
+    }
+}
+
+@keyframes rotate-center {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -68,6 +68,10 @@
         font-size: 60px;
     }
 
+    &--rotate {
+        animation: rotate-center 0.25s linear 3;
+    }
+
     &--color-1 {
         color: var(--dice-color-1);
     }
@@ -94,7 +98,7 @@
 .b-btn {
     margin: 15px;
     text-align: center;
-   
+
     button[class^="b-btn__"] {
         background-color: var(--color-dark);
         border: none;
