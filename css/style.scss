@@ -1,27 +1,8 @@
-@mixin font-big {
-    color: var(--color-light);
-    font-family: "Kanit";
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: center;
-}
-
-@mixin dice-icons {
-    font-family: "icomoon";
-    font-weight: normal;
-    font-size: 80px;
-    line-height: 1em;
-}
-
 @import "fonts";
 @import "variables";
-@import "header";
-@import "main";
-@import "footer";
-@import "mediaqueries";
 
 body {
-    margin: 0;
+    margin: 0 auto;
     background-color: var(--color-light);
     font-family: "Montserrat";
     font-weight: bold;
@@ -29,6 +10,23 @@ body {
     color: var(--color-dark);
 }
 
-a {
-    text-decoration: none;
+@mixin font-big {
+    color: var(--color-light);
+    font-family: "Kanit";
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
 }
+
+@mixin dice-icons {
+    font-family: "icomoon";
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 0.75em;
+}
+
+@import "header";
+@import "main";
+@import "footer";
+@import "mediaqueries";

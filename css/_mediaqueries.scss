@@ -1,11 +1,52 @@
 @media screen and (min-width: 576px) {
-    .b-roller__selection {
-        min-width: 550px;
+    .qblt-title {
+        font-size: 24px;
+    }
+
+    .b-roller {
+        &__selector {
+            margin: 30px 0;
+            max-width: none;
+        }
+
+        &__selection {
+            min-width: 500px;
+        }
+    }
+
+    span[class^="b-dice__"] {
+        font-size: 80px;
+    }
+
+    .b-instructions {
+        div {
+            display: inline-block;
+
+            &:first-child {
+                margin-right: 40px;
+            }
+        }
+    }
+
+    .b-btn {
+        margin: 50px 0;
+
+        button[class^="b-btn__"] {
+            font-size: 16px;
+        }
+    }
+
+    .b-your-roll {
+        margin-top: 40px;
+
+        &__total {
+            margin-top: 30px;
+        }
     }
 }
 
 @media screen and (min-width: 810px) {
     .b-roller__selection {
-        min-width: 750px;
+        width: 750px;
     }
 }

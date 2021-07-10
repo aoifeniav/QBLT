@@ -13,13 +13,12 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <h1 class="qblt-title mt-2">QBLT</h1>
+        <h1 class="qblt-title">QBLT</h1>
     </header>
     <main>
-        <div class="container d-flex flex-column align-items-center">
-            <div class="b-roller m-5">
-                <div
-                    class="b-roller__selector d-flex justify-content-center flex-wrap">
+        <div>
+            <div class="b-roller">
+                <div class="b-roller__selector d-flex justify-content-center flex-wrap">
                     <span class="b-dice__d4" role="button"></span>
                     <span class="b-dice__d6" role="button"></span>
                     <span class="b-dice__d8" role="button"></span>
@@ -29,14 +28,43 @@
                 </div>
                 <div class="b-roller__selection d-flex justify-content-center flex-wrap">
                 </div>
-                <div class="b-instructions mt-2">
-                    <span class="mx-4">left&nbsp;click/tap: change&nbsp;color</span>
-                    <span class="mx-4">right&nbsp;click/clear: remove&nbsp;dice</span>
+                <div class="b-instructions">
+                    <div>left&nbsp;click/tap: change&nbsp;color</div>
+                    <div>right&nbsp;click/clear: remove&nbsp;dice</div>
                 </div>
-                <div class="b-roller__buttons my-5">
-                    <button class="b-btn b-btn__roll">Roll</button>
-                    <button class="b-btn b-btn__clear">Clear</button>
+                <div class="b-btn">
+                    <button class="b-btn__roll">Roll</button>
+                    <button class="b-btn__clear">Clear</button>
                 </div>
+            </div>
+            <div class="b-your-roll">
+                <div class="d-flex justify-content-center flex-wrap">
+                    <div class="d-flex flex-column align-items-center">
+                        <span class="b-dice__d4 b-dice--small"></span>
+                        <span class="b-your-roll__result">2</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <span class="b-dice__d6 b-dice--small"></span>
+                        <span class="b-your-roll__result">4</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <span class="b-dice__d6 b-dice--small"></span>
+                        <span class="b-your-roll__result">1</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <span class="b-dice__d6 b-dice--small"></span>
+                        <span class="b-your-roll__result">3</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <span class="b-dice__d6 b-dice--small"></span>
+                        <span class="b-your-roll__result">2</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <span class="b-dice__d20 b-dice--small"></span>
+                        <span class="b-your-roll__result">17</span>
+                    </div>
+                </div>
+                <div class="b-your-roll__total">Total: 16</div>
             </div>
         </div>
     </main>

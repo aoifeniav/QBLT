@@ -40,6 +40,15 @@
   --shadow: 0px 2px 5px #404040;
 }
 
+body {
+  margin: 0 auto;
+  background-color: var(--color-light);
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 11px;
+  color: var(--color-dark);
+}
+
 header {
   background-color: var(--color-dark);
   -webkit-box-shadow: var(--shadow);
@@ -49,80 +58,113 @@ header {
 .qblt-title {
   color: var(--color-light);
   font-family: "Kanit";
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-align: center;
-  font-size: 26px;
-}
-
-.b-color-theme {
-  text-align: center;
-  color: var(--grey-light);
-}
-
-.b-color-theme--on {
-  color: var(--color-dark);
+  font-size: 16px;
+  padding-top: 6px;
 }
 
 .b-roller {
-  text-align: center;
+  margin: 20px 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.b-roller__selector {
+  max-width: 280px;
+}
+
+.b-roller__selector span[class^="b-dice__"] {
+  padding: 6px 8px;
 }
 
 .b-roller__selection {
-  min-height: 100px;
-  max-width: 750px;
+  min-height: 85px;
+  width: 300px;
   border: 2px solid var(--grey-light);
   border-radius: 8px;
   background-color: var(--color-white);
-  padding-top: 15px;
+  padding-top: 18px;
+}
+
+.b-dice__d4 {
+  font-family: "icomoon";
+  font-weight: normal;
+  font-size: 70px;
+  line-height: 0.75em;
 }
 
 .b-dice__d4:before {
   content: "\e905";
+}
+
+.b-dice__d6 {
   font-family: "icomoon";
   font-weight: normal;
-  font-size: 80px;
-  line-height: 1em;
+  font-size: 70px;
+  line-height: 0.75em;
 }
 
 .b-dice__d6:before {
   content: "\e904";
+}
+
+.b-dice__d8 {
   font-family: "icomoon";
   font-weight: normal;
-  font-size: 80px;
-  line-height: 1em;
+  font-size: 70px;
+  line-height: 0.75em;
 }
 
 .b-dice__d8:before {
   content: "\e903";
+}
+
+.b-dice__d10 {
   font-family: "icomoon";
   font-weight: normal;
-  font-size: 80px;
-  line-height: 1em;
+  font-size: 70px;
+  line-height: 0.75em;
 }
 
 .b-dice__d10:before {
   content: "\e902";
+}
+
+.b-dice__d12 {
   font-family: "icomoon";
   font-weight: normal;
-  font-size: 80px;
-  line-height: 1em;
+  font-size: 70px;
+  line-height: 0.75em;
 }
 
 .b-dice__d12:before {
   content: "\e901";
+}
+
+.b-dice__d20 {
   font-family: "icomoon";
   font-weight: normal;
-  font-size: 80px;
-  line-height: 1em;
+  font-size: 70px;
+  line-height: 0.75em;
 }
 
 .b-dice__d20:before {
   content: "\e900";
-  font-family: "icomoon";
-  font-weight: normal;
-  font-size: 80px;
-  line-height: 1em;
+}
+
+.b-dice--small {
+  font-size: 60px;
 }
 
 .b-dice--color-1 {
@@ -142,22 +184,41 @@ header {
 }
 
 .b-instructions {
+  margin: 5px;
   color: var(--grey-light);
+  text-align: center;
 }
 
 .b-btn {
+  margin: 15px;
+  text-align: center;
+}
+
+.b-btn button[class^="b-btn__"] {
   background-color: var(--color-dark);
   border: none;
   -webkit-box-shadow: var(--shadow);
           box-shadow: var(--shadow);
-  margin: 0 12px;
   padding: 8px 12px;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--color-light);
   font-family: "Kanit";
+  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-align: center;
+}
+
+.b-btn__roll {
+  margin-right: 40px;
+}
+
+.b-your-roll {
+  text-align: center;
+}
+
+.b-your-roll__total {
+  margin-top: 10px;
 }
 
 footer {
@@ -169,27 +230,42 @@ footer {
 }
 
 @media screen and (min-width: 576px) {
+  .qblt-title {
+    font-size: 24px;
+  }
+  .b-roller__selector {
+    margin: 30px 0;
+    max-width: none;
+  }
   .b-roller__selection {
-    min-width: 550px;
+    min-width: 500px;
+  }
+  span[class^="b-dice__"] {
+    font-size: 80px;
+  }
+  .b-instructions div {
+    display: inline-block;
+  }
+  .b-instructions div:first-child {
+    margin-right: 40px;
+  }
+  .b-btn {
+    margin: 50px 0;
+  }
+  .b-btn button[class^="b-btn__"] {
+    font-size: 16px;
+  }
+  .b-your-roll {
+    margin-top: 40px;
+  }
+  .b-your-roll__total {
+    margin-top: 30px;
   }
 }
 
 @media screen and (min-width: 810px) {
   .b-roller__selection {
-    min-width: 750px;
+    width: 750px;
   }
-}
-
-body {
-  margin: 0;
-  background-color: var(--color-light);
-  font-family: "Montserrat";
-  font-weight: bold;
-  font-size: 11px;
-  color: var(--color-dark);
-}
-
-a {
-  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
