@@ -34,6 +34,7 @@
   --dice-color-2: #10c05e;
   --dice-color-3: #648fff;
   --dice-color-4: #ffb000;
+  --flash: #FFFD8D;
   --grey-dark: #404040;
   --grey-light: #aaaaaa;
   --color-white: #ffffff;
@@ -47,6 +48,24 @@ body {
   font-weight: bold;
   font-size: 11px;
   color: var(--color-dark);
+}
+
+@-webkit-keyframes highlight {
+  50% {
+    background-color: var(--flash);
+  }
+  100% {
+    background-color: var(--color-white);
+  }
+}
+
+@keyframes highlight {
+  50% {
+    background-color: var(--flash);
+  }
+  100% {
+    background-color: var(--color-white);
+  }
 }
 
 header {
@@ -95,6 +114,11 @@ header {
   border-radius: 8px;
   background-color: var(--color-white);
   padding-top: 18px;
+}
+
+.b-roller__selection--flash {
+  -webkit-animation: highlight 0.25s linear 3;
+          animation: highlight 0.25s linear 3;
 }
 
 .b-dice__d4 {

@@ -17,9 +17,13 @@ function rollDice() {
         document.querySelector('.b-your-roll').remove();
     }
 
+    const b_roller__selection = document.querySelector('.b-roller__selection');
     const selectedDice = document.querySelectorAll('.b-roller__selection>span');
     if (selectedDice.length <= 0) {
-        // Aquí hay que poner que haga algo si no hay dados en la selección.
+        b_roller__selection.classList.add('b-roller__selection--flash');
+        setTimeout(function () {
+            b_roller__selection.classList.remove('b-roller__selection--flash');
+        }, 1000);
     } else {
         const main_section = document.querySelector('main');
         const b_your_roll = document.createElement('div');

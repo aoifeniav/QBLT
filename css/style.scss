@@ -26,6 +26,11 @@ body {
     line-height: 0.75em;
 }
 
+@keyframes highlight {
+    50%  { background-color: var(--flash); }
+    100% { background-color: var(--color-white); }
+  }
+
 @import "header";
 @import "main";
 @import "footer";
