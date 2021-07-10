@@ -286,6 +286,7 @@ footer {
   }
   .b-your-roll {
     margin-top: 40px;
+    min-width: 500px;
   }
   .b-your-roll__total {
     margin-top: 30px;
@@ -294,6 +295,9 @@ footer {
 
 @media screen and (min-width: 810px) {
   .b-roller__selection {
+    width: 750px;
+  }
+  .b-your-roll {
     width: 750px;
   }
 }
