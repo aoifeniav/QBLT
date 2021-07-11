@@ -72,6 +72,10 @@
         animation: rotate-center 0.25s linear 3;
     }
 
+    &--wobble {
+        animation: wobble-ver-left 0.3s linear both;
+    }
+
     &--color-1 {
         color: var(--dice-color-1);
     }

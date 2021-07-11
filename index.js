@@ -19,6 +19,7 @@ function rollDice() {
 
     const b_roller__selection = document.querySelector('.b-roller__selection');
     const selectedDice = document.querySelectorAll('.b-roller__selection>span');
+
     if (selectedDice.length <= 0) {
         b_roller__selection.classList.add('b-roller__selection--flash');
         setTimeout(function () {
@@ -39,6 +40,12 @@ function rollDice() {
             const rolledDieContainer = document.createElement('div');
             rolledDieContainer.classList.add('d-flex', 'flex-column', 'align-items-center');
             rolledDiceRow.appendChild(rolledDieContainer);
+
+            rolledDieInList.classList.add('b-dice--rotate');
+            setTimeout(function () {
+                rolledDieInList.classList.remove('b-dice--rotate');
+            }, 1000);
+
             const rolledDieInListClasses = rolledDieInList.getAttribute('class');
             let dieValor;
             if (rolledDieInListClasses.includes('d4')) {
@@ -60,19 +67,27 @@ function rollDice() {
                 dieValor = getRandomNumber(1, 20);
                 rolledNumbers.push(dieValor);
             }
-            const rolledDieIcon = document.createElement('span');
-            rolledDieIcon.setAttribute('class', rolledDieInList.classList);
-            rolledDieIcon.classList.add('b-dice--small', 'b-dice--rotate');
-            rolledDieContainer.appendChild(rolledDieIcon);
-            const rolledDieValor = document.createElement('span');
-            rolledDieValor.classList.add('b-your-roll__result');
-            rolledDieValor.innerHTML = dieValor;
-            rolledDieContainer.appendChild(rolledDieValor);
+
+            setTimeout(function () {
+                const rolledDieIcon = document.createElement('span');
+                rolledDieIcon.setAttribute('class', rolledDieInList.classList);
+                rolledDieIcon.classList.add('b-dice--small', 'b-dice--wobble');
+                rolledDieContainer.appendChild(rolledDieIcon);
+                const rolledDieValor = document.createElement('span');
+                rolledDieValor.classList.add('b-your-roll__result');
+                rolledDieValor.innerHTML = dieValor;
+                rolledDieContainer.appendChild(rolledDieValor);
+            }, 1000);
+
         });
-        const rolledTotalSum = document.createElement('div');
-        rolledTotalSum.classList.add('b-your-roll__total');
-        b_your_roll.appendChild(rolledTotalSum);
-        rolledTotalSum.innerText = 'Total: ' + sumNumberList(rolledNumbers);
+
+        setTimeout(function () {
+            const rolledTotalSum = document.createElement('div');
+            rolledTotalSum.classList.add('b-your-roll__total');
+            b_your_roll.appendChild(rolledTotalSum);
+            rolledTotalSum.innerText = 'Total: ' + sumNumberList(rolledNumbers);
+        }, 1000);
+
     }
 }
 
