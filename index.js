@@ -12,6 +12,12 @@ function sumNumberList(numberList) {
     return sumTotal;
 }
 
+function removeClassAfter(item, classToRemove) {
+    setTimeout(function () {
+        item.classList.remove(classToRemove);
+    }, 1000);
+}
+
 function rollDice() {
     if (document.querySelector('.b-your-roll')) {
         document.querySelector('.b-your-roll').remove();
@@ -22,9 +28,7 @@ function rollDice() {
 
     if (selectedDice.length <= 0) {
         b_roller__selection.classList.add('b-roller__selection--flash');
-        setTimeout(function () {
-            b_roller__selection.classList.remove('b-roller__selection--flash');
-        }, 1000);
+        removeClassAfter(b_roller__selection, 'b-roller__selection--flash');
     } else {
         const main_section = document.querySelector('main');
         const b_your_roll = document.createElement('div');
@@ -42,9 +46,7 @@ function rollDice() {
             rolledDiceRow.appendChild(rolledDieContainer);
 
             rolledDieInList.classList.add('b-dice--rotate');
-            setTimeout(function () {
-                rolledDieInList.classList.remove('b-dice--rotate');
-            }, 1000);
+            removeClassAfter(rolledDieInList, 'b-dice--rotate');
 
             const rolledDieInListClasses = rolledDieInList.getAttribute('class');
             let dieValor;
@@ -162,15 +164,10 @@ function clearButtonListener() {
     });
 }
 
-function eventListeners() {
+function init() {
     selectorDieListener();
     rollButtonListener();
     clearButtonListener();
-}
-
-function init() {
-    eventListeners();
-    getRandomNumber();
 }
 
 window.onload = function () {
