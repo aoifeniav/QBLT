@@ -235,8 +235,8 @@ header {
   margin: 0 auto;
 }
 
-.b-your-roll__total {
-  margin-top: 10px;
+.b-your-roll__icon-value {
+  padding-bottom: 20px;
 }
 
 footer {
@@ -267,23 +267,23 @@ footer {
 
 @-webkit-keyframes rotate-center {
   0% {
-    -webkit-transform: translateY(-25%) rotate(0);
-            transform: translateY(-25%) rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   100% {
-    -webkit-transform: translate(0, 0) rotate(360deg);
-            transform: translate(0, 0) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes rotate-center {
   0% {
-    -webkit-transform: translateY(-25%) rotate(0);
-            transform: translateY(-25%) rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   100% {
-    -webkit-transform: translate(0, 0) rotate(360deg);
-            transform: translate(0, 0) rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -379,9 +379,6 @@ footer {
   .b-your-roll {
     margin-top: 40px;
     min-width: 500px;
-  }
-  .b-your-roll__total {
-    margin-top: 30px;
   }
 }
 

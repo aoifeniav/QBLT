@@ -42,7 +42,7 @@ function rollDice() {
         const rolledNumbers = [];
         selectedDice.forEach(function (rolledDieInList) {
             const rolledDieContainer = document.createElement('div');
-            rolledDieContainer.classList.add('d-flex', 'flex-column', 'align-items-center');
+            rolledDieContainer.classList.add('b-your-roll__icon-value', 'd-flex', 'flex-column', 'align-items-center');
             rolledDiceRow.appendChild(rolledDieContainer);
 
             rolledDieInList.classList.add('b-dice--rotate');
@@ -85,7 +85,6 @@ function rollDice() {
 
         setTimeout(function () {
             const rolledTotalSum = document.createElement('div');
-            rolledTotalSum.classList.add('b-your-roll__total');
             b_your_roll.appendChild(rolledTotalSum);
             rolledTotalSum.innerText = 'Total: ' + sumNumberList(rolledNumbers);
         }, 1000);

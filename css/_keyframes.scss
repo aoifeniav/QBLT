@@ -9,10 +9,10 @@
 
 @keyframes rotate-center {
     0% {
-        transform: translateY(-25%) rotate(0);
+        transform: rotate(0);
     }
     100% {
-        transform: translate(0, 0) rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
